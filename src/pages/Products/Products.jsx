@@ -1,7 +1,7 @@
 import { useEffect, useState, useCallback } from "react";
 import { useSearchParams } from "react-router-dom";
-import { getAllProducts, getCategories } from "../services/api";
-import ProductCard from "../components/ui/ProductCard";
+import { getAllProducts, getCategories } from "../../services/api";
+import ProductCard from "../../components/ui/ProductCard";
 import { FiGrid, FiList, FiX, FiChevronDown, FiChevronUp } from "react-icons/fi";
 import "./Products.css";
 

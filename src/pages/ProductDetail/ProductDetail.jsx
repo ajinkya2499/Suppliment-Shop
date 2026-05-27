@@ -6,10 +6,10 @@ import {
   FiTruck, FiShield, FiRefreshCw, FiLock,
   FiChevronRight, FiMinus, FiPlus, FiStar,
 } from "react-icons/fi";
-import { getProductById, getRelatedProducts, getProductReviews } from "../services/api";
-import { addToCart }       from "../redux/slices/cartSlice";
-import { toggleWishlist }  from "../redux/slices/wishlistSlice";
-import ProductCard          from "../components/ui/ProductCard";
+import { getProductById, getRelatedProducts, getProductReviews } from "../../services/api";
+import { addToCart }       from "../../redux/slices/cartSlice";
+import { toggleWishlist }  from "../../redux/slices/wishlistSlice";
+import ProductCard          from "../../components/ui/ProductCard";
 import toast                from "react-hot-toast";
 import "./ProductDetail.css";
 

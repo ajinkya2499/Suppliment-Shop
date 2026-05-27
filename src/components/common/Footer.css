@@ -1,0 +1,189 @@
+.site-footer {
+  background: #0d0d0d;
+  color: #fff;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ── Newsletter ── */
+.ft-newsletter {
+  background: #141414;
+  border-bottom: 1px solid #1e1e1e;
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.ft-nl-title {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 22px;
+  color: #fff;
+  letter-spacing: 0.04em;
+  margin-bottom: 2px;
+}
+.ft-nl-sub  { font-size: 13px; color: #555; }
+.ft-nl-form {
+  display: flex;
+  gap: 8px;
+  flex: 1;
+  max-width: 420px;
+}
+.ft-nl-input-wrap {
+  flex: 1;
+  position: relative;
+}
+.ft-nl-icon {
+  position: absolute;
+  left: 12px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #555;
+  font-size: 14px;
+  pointer-events: none;
+}
+.ft-nl-input {
+  width: 100%;
+  background: #111;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  padding: 10px 14px 10px 36px;
+  font-size: 13px;
+  color: #fff;
+  outline: none;
+  font-family: 'DM Sans', sans-serif;
+  transition: border-color 0.15s;
+}
+.ft-nl-input::placeholder { color: #444; }
+.ft-nl-input:focus { border-color: #f5a623; }
+.ft-nl-btn {
+  background: #f5a623;
+  color: #0d0d0d;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  white-space: nowrap;
+  font-family: 'DM Sans', sans-serif;
+  transition: background 0.15s;
+}
+.ft-nl-btn:hover     { background: #e09510; }
+.ft-nl-success {
+  font-size: 14px;
+  color: #4caf50;
+  font-weight: 600;
+}
+
+/* ── Main grid ── */
+.ft-main {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 3rem;
+  padding: 3rem 2rem;
+}
+
+/* Brand column */
+.ft-logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 34px;
+  color: #f5a623;
+  letter-spacing: 0.08em;
+  text-decoration: none;
+  display: inline-block;
+  margin-bottom: 12px;
+}
+.ft-logo span { color: #fff; }
+.ft-desc {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.7;
+  margin-bottom: 1.2rem;
+  max-width: 290px;
+}
+.ft-socials { display: flex; gap: 8px; margin-bottom: 1.2rem; }
+.ft-social-btn {
+  width: 36px; height: 36px;
+  background: #1a1a1a;
+  border: 1px solid #222;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #666;
+  transition: all 0.15s;
+}
+.ft-social-btn:hover {
+  background: #f5a623;
+  border-color: #f5a623;
+  color: #0d0d0d;
+  transform: translateY(-2px);
+}
+.ft-trust       { display: flex; flex-wrap: wrap; gap: 6px; }
+.ft-trust-badge {
+  font-size: 11px;
+  color: #555;
+  background: #141414;
+  border: 1px solid #1e1e1e;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+/* Link columns */
+.ft-col-title {
+  font-size: 11px;
+  font-weight: 700;
+  color: #fff;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #1a1a1a;
+}
+.ft-link {
+  display: block;
+  font-size: 13px;
+  color: #555;
+  margin-bottom: 10px;
+  text-decoration: none;
+  transition: color 0.15s, padding-left 0.15s;
+}
+.ft-link:hover { color: #f5a623; padding-left: 4px; }
+
+/* ── Bottom bar ── */
+.ft-bottom {
+  border-top: 1px solid #1a1a1a;
+  padding: 1.2rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.ft-copy { font-size: 12px; color: #444; }
+.ft-copy span { color: #f5a623; }
+.ft-payment { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.ft-pay-label { font-size: 11px; color: #444; }
+.ft-pay-badge {
+  background: #141414;
+  border: 1px solid #1e1e1e;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 11px;
+  color: #555;
+  transition: border-color 0.15s, color 0.15s;
+}
+.ft-pay-badge:hover { border-color: #f5a623; color: #f5a623; }
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .ft-main        { grid-template-columns: 1fr 1fr; gap: 2rem; }
+  .ft-newsletter  { flex-direction: column; align-items: flex-start; }
+  .ft-nl-form     { max-width: 100%; width: 100%; }
+}
+@media (max-width: 500px) {
+  .ft-main   { grid-template-columns: 1fr; }
+  .ft-bottom { flex-direction: column; align-items: flex-start; }
+}

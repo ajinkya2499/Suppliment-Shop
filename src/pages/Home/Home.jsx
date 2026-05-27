@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { getAllProducts } from "../services/api";
-import ProductCard from "../components/ui/ProductCard";
+import { getAllProducts } from "../../services/api";
+import ProductCard from "../../components/ui/ProductCard";
 import "./Home.css";
 
 const categories = [

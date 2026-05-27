@@ -1,15 +1,14 @@
 import { Outlet } from "react-router-dom";
 import Navbar from "../components/common/Navbar";
+import Footer from "../components/common/Footer";
 
 const MainLayout = () => (
-  <div style={{ minHeight: "100vh", display: "flex", flexDirection: "column", background: "#f8f8f8" }}>
+  <div style={{ minHeight:"100vh", display:"flex", flexDirection:"column" }}>
     <Navbar />
-    <main style={{ flex: 1 }}>
+    <main style={{ flex: 1, background: "#f5f5f0" }}>
       <Outlet />
     </main>
-    <footer style={{ background: "#0d0d0d", color: "#888", padding: "1rem", textAlign: "center", fontSize: "13px" }}>
-      © 2025 FuelFit. Footer coming soon.
-    </footer>
+    <Footer />
   </div>
 );
 
