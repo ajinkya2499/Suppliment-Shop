@@ -1,11 +1,11 @@
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import { useSelector } from "react-redux";
 import MainLayout    from "../layouts/MainLayout";
-import Home          from "../pages/Home";
-import Products      from "../pages/Products";
-import ProductDetail from "../pages/ProductDetail";
-import Cart          from "../pages/Cart";
-import Login         from "../pages/Login";
+import Home          from "../pages/Home/Home";
+import Products      from "../pages/Products/Products";
+import ProductDetail from "../pages/ProductDetail/ProductDetail";
+import Cart          from "../pages/Card/Cart";
+import Login         from "../pages/Login/Login";
 import Register      from "../pages/Register";
 
 /* Wraps pages that need login */
