@@ -6,7 +6,7 @@ import Products      from "../pages/Products/Products";
 import ProductDetail from "../pages/ProductDetail/ProductDetail";
 import Cart          from "../pages/Card/Cart";
 import Login         from "../pages/Login/Login";
-import Register      from "../pages/Register";
+import Register      from "../pages/Register"; 
 
 /* Wraps pages that need login */
 const ProtectedRoute = ({ children }) => {

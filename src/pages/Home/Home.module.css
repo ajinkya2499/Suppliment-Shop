@@ -10,8 +10,8 @@
   gap: 2rem;
   min-height: 360px;
 }
-.hero-left { flex: 1; max-width: 540px; }
-.hero-tag {
+.heroLeft { flex: 1; max-width: 540px; }
+.heroTag {
   background: #f5a623;
   color: #0d0d0d;
   font-size: 11px;
@@ -22,7 +22,7 @@
   margin-bottom: 1rem;
   letter-spacing: 0.06em;
 }
-.hero-title {
+.heroTitle {
   font-family: 'Bebas Neue', cursive;
   font-size: 60px;
   color: #fff;
@@ -30,10 +30,10 @@
   letter-spacing: 0.02em;
   margin-bottom: 1rem;
 }
-.hero-title span { color: #f5a623; }
-.hero-sub { color: #999; font-size: 15px; line-height: 1.6; margin-bottom: 1.5rem; }
-.hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 2rem; }
-.btn-primary {
+.heroTitle span { color: #f5a623; }
+.herosub { color: #999; font-size: 15px; line-height: 1.6; margin-bottom: 1.5rem; }
+.heroBtns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 2rem; }
+.btnPrimary {
   background: #f5a623;
   color: #0d0d0d;
   border: none;
@@ -45,8 +45,8 @@
   font-family: 'DM Sans', sans-serif;
   transition: background 0.15s;
 }
-.btn-primary:hover { background: #e09510; }
-.btn-outline {
+.btnPrimary:hover { background: #e09510; }
+.btnOutline {
   background: none;
   color: #fff;
   border: 1px solid #333;
@@ -58,17 +58,17 @@
   font-family: 'DM Sans', sans-serif;
   transition: border-color 0.15s;
 }
-.btn-outline:hover { border-color: #f5a623; color: #f5a623; }
-.hero-stats { display: flex; gap: 2.5rem; }
-.stat-num {
+.btnOutline:hover { border-color: #f5a623; color: #f5a623; }
+.herostats { display: flex; gap: 2.5rem; }
+.statNum {
   font-family: 'Bebas Neue', cursive;
   font-size: 30px;
   color: #f5a623;
 }
-.stat-lbl { font-size: 11px; color: #666; }
+.statLbl { font-size: 11px; color: #666; }
 
 /* Hero product card */
-.hero-card {
+.heroCard {
   background: #1a1a1a;
   border: 1px solid #2a2a2a;
   border-radius: 12px;
@@ -76,14 +76,14 @@
   width: 240px;
   flex-shrink: 0;
 }
-.hero-card-label { font-size: 11px; color: #f5a623; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.05em; }
-.hero-card-title { font-size: 15px; color: #fff; font-weight: 500; margin-bottom: 6px; }
-.hero-card-price-row { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; }
-.hero-card-price { font-family: 'Bebas Neue', cursive; font-size: 30px; color: #fff; }
-.hero-card-og { font-size: 13px; color: #555; text-decoration: line-through; }
-.hero-card-img { width: 100%; height: 130px; border-radius: 8px; overflow: hidden; margin-bottom: 12px; background: #222; }
-.hero-card-img img { width: 100%; height: 100%; object-fit: cover; }
-.hero-card-btn {
+.heroCardLabel { font-size: 11px; color: #f5a623; font-weight: 700; margin-bottom: 6px; letter-spacing: 0.05em; }
+.heroCardTitle { font-size: 15px; color: #fff; font-weight: 500; margin-bottom: 6px; }
+.heroCardPriceRow { display: flex; align-items: baseline; gap: 8px; margin-bottom: 10px; }
+.heroCardPrice { font-family: 'Bebas Neue', cursive; font-size: 30px; color: #fff; }
+.heroCardOg { font-size: 13px; color: #555; text-decoration: line-through; }
+.heroCardImg { width: 100%; height: 130px; border-radius: 8px; overflow: hidden; margin-bottom: 12px; background: #222; }
+.heroCardImg img { width: 100%; height: 100%; object-fit: cover; }
+.heroCardBtn {
   display: block;
   text-align: center;
   background: #f5a623;
@@ -95,41 +95,41 @@
   font-weight: 700;
   transition: background 0.15s;
 }
-.hero-card-btn:hover { background: #e09510; }
+.heroCard-btn:hover { background: #e09510; }
 
 /* ── Trust bar ── */
-.trust-bar {
+.trustBar {
   background: #0d0d0d;
   padding: 1.2rem 2rem;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 1rem;
 }
-.trust-item { display: flex; align-items: center; gap: 12px; }
-.trust-icon { font-size: 22px; }
-.trust-item strong { display: block; font-size: 13px; color: #fff; font-weight: 600; }
-.trust-item span { font-size: 12px; color: #666; }
+.trustItem { display: flex; align-items: center; gap: 12px; }
+.trustIcon { font-size: 22px; }
+.trustItem strong { display: block; font-size: 13px; color: #fff; font-weight: 600; }
+.trustItem span { font-size: 12px; color: #666; }
 
 /* ── Sections ── */
 .section { padding: 2.5rem 2rem; }
-.white-bg { background: #fff; }
-.section-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
-.section-title {
+.whiteBg { background: #fff; }
+.sectionHeader { display: flex; align-items: center; justify-content: space-between; margin-bottom: 1.5rem; }
+.sectionTitle {
   font-family: 'Bebas Neue', cursive;
   font-size: 28px;
   color: #111;
   letter-spacing: 0.04em;
 }
-.see-all { font-size: 13px; color: #f5a623; font-weight: 600; text-decoration: none; }
-.see-all:hover { text-decoration: underline; }
+.seeAll { font-size: 13px; color: #f5a623; font-weight: 600; text-decoration: none; }
+.seeAll:hover { text-decoration: underline; }
 
 /* ── Categories ── */
-.cat-grid {
+.catGrid {
   display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  gap: 12px;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 15px;
 }
-.cat-card {
+.catCard {
   background: #0d0d0d;
   border-radius: 10px;
   padding: 1.4rem 1rem;
@@ -137,24 +137,24 @@
   text-decoration: none;
   transition: transform 0.15s, background 0.15s;
 }
-.cat-card:hover { transform: translateY(-3px); background: #1a1a1a; }
-.cat-icon { font-size: 30px; margin-bottom: 8px; }
-.cat-name { font-size: 12px; color: #ccc; font-weight: 500; }
+.catCard:hover { transform: translateY(-3px); background: #1a1a1a; }
+.catIcon { font-size: 30px; margin-bottom: 8px; }
+.catName { font-size: 12px; color: #ccc; font-weight: 500; }
 
 /* ── Products grid ── */
-.prod-grid {
+.prodGrid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
 
 /* ── Skeleton loading ── */
-.loading-row {
+.loadingRow {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: 16px;
 }
-.skeleton-card {
+.skeletonCard {
   height: 320px;
   background: linear-gradient(90deg, #e8e8e8 25%, #f5f5f5 50%, #e8e8e8 75%);
   background-size: 200% 100%;
@@ -169,13 +169,13 @@
 /* ── Responsive ── */
 @media (max-width: 900px) {
   .hero { flex-direction: column; }
-  .hero-card { width: 100%; }
-  .cat-grid { grid-template-columns: repeat(3, 1fr); }
-  .prod-grid { grid-template-columns: repeat(2, 1fr); }
-  .trust-bar { grid-template-columns: repeat(2, 1fr); }
+  .heroCard { width: 100%; }
+  .catGrid { grid-template-columns: repeat(3, 1fr); }
+  .prodGrid { grid-template-columns: repeat(2, 1fr); }
+  .trustBar { grid-template-columns: repeat(2, 1fr); }
 }
 @media (max-width: 500px) {
-  .hero-title { font-size: 44px; }
-  .cat-grid { grid-template-columns: repeat(2, 1fr); }
-  .prod-grid { grid-template-columns: 1fr; }
+  .heroTitle { font-size: 44px; }
+  .catGrid { grid-template-columns: repeat(2, 1fr); }
+  .prodGrid { grid-template-columns: 1fr; }
 }
