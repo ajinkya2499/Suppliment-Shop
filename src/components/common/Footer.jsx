@@ -1,45 +1,49 @@
 import { useState } from "react";
-import { Link }     from "react-router-dom";
+import { Link } from "react-router-dom";
 import {
-  FiInstagram, FiFacebook, FiTwitter, FiYoutube, FiMail,
+  FiInstagram,
+  FiFacebook,
+  FiTwitter,
+  FiYoutube,
+  FiMail,
 } from "react-icons/fi";
 import toast from "react-hot-toast";
-import "./Footer.css";
+import styles from "./Footer.module.css";
 
 const LINKS = {
   Products: [
     { label: "Whey Protein", to: "/products?category=whey-protein" },
-    { label: "Mass Gainer",  to: "/products?category=mass-gainer"  },
-    { label: "Pre-Workout",  to: "/products?category=pre-workout"  },
-    { label: "Creatine",     to: "/products?category=creatine"     },
-    { label: "Vitamins",     to: "/products?category=vitamins"     },
-    { label: "All Products", to: "/products"                       },
+    { label: "Mass Gainer", to: "/products?category=mass-gainer" },
+    { label: "Pre-Workout", to: "/products?category=pre-workout" },
+    { label: "Creatine", to: "/products?category=creatine" },
+    { label: "Vitamins", to: "/products?category=vitamins" },
+    { label: "All Products", to: "/products" },
   ],
   Company: [
-    { label: "About Us",  to: "/" },
-    { label: "Blog",      to: "/" },
-    { label: "Careers",   to: "/" },
-    { label: "Press",     to: "/" },
-    { label: "Contact Us",to: "/" },
+    { label: "About Us", to: "/" },
+    { label: "Blog", to: "/" },
+    { label: "Careers", to: "/" },
+    { label: "Press", to: "/" },
+    { label: "Contact Us", to: "/" },
   ],
   Support: [
-    { label: "Track Order",     to: "/" },
-    { label: "Returns Policy",  to: "/" },
-    { label: "FAQ",             to: "/" },
-    { label: "Privacy Policy",  to: "/" },
-    { label: "Terms of Service",to: "/" },
+    { label: "Track Order", to: "/" },
+    { label: "Returns Policy", to: "/" },
+    { label: "FAQ", to: "/" },
+    { label: "Privacy Policy", to: "/" },
+    { label: "Terms of Service", to: "/" },
   ],
 };
 
 const SOCIALS = [
-  { icon: <FiInstagram size={16}/>, label: "Instagram" },
-  { icon: <FiFacebook  size={16}/>, label: "Facebook"  },
-  { icon: <FiTwitter   size={16}/>, label: "Twitter"   },
-  { icon: <FiYoutube   size={16}/>, label: "YouTube"   },
+  { icon: <FiInstagram size={16} />, label: "Instagram" },
+  { icon: <FiFacebook size={16} />, label: "Facebook" },
+  { icon: <FiTwitter size={16} />, label: "Twitter" },
+  { icon: <FiYoutube size={16} />, label: "YouTube" },
 ];
 
 const Footer = () => {
-  const [email,     setEmail]     = useState("");
+  const [email, setEmail] = useState("");
   const [subscribed, setSubscribed] = useState(false);
 
   const handleSubscribe = (e) => {
@@ -54,33 +58,32 @@ const Footer = () => {
   };
 
   return (
-    <footer className="site-footer">
-
+    <footer className={styles.siteFooter}>
       {/* ── Newsletter bar ── */}
-      <div className="ft-newsletter">
-        <div className="ft-nl-text">
-          <h3 className="ft-nl-title">GET 10% OFF YOUR FIRST ORDER</h3>
-          <p className="ft-nl-sub">
+      <div className={styles.ftNewsletter}>
+        <div className={styles.ftNlText}>
+          <h3 className={styles.ftNlTitle}>GET 10% OFF YOUR FIRST ORDER</h3>
+          <p className={styles.ftNlSub}>
             Subscribe for deals, fitness tips &amp; new arrivals
           </p>
         </div>
         {subscribed ? (
-          <div className="ft-nl-success">
+          <div className={styles.ftNlSuccess}>
             ✅ You're subscribed! Check your inbox.
           </div>
         ) : (
-          <form className="ft-nl-form" onSubmit={handleSubscribe}>
-            <div className="ft-nl-input-wrap">
-              <FiMail className="ft-nl-icon"/>
+          <form className={styles.ftNlForm} onSubmit={handleSubscribe}>
+            <div className={styles.ftNlInputWrap}>
+              <FiMail className={styles.ftNlIcon} />
               <input
-                className="ft-nl-input"
+                className={styles.ftNlInput}
                 type="email"
                 placeholder="Enter your email address"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
             </div>
-            <button className="ft-nl-btn" type="submit">
+            <button className={styles.ftNlBtn} type="submit">
               Subscribe
             </button>
           </form>
@@ -88,20 +91,21 @@ const Footer = () => {
       </div>
 
       {/* ── Main grid ── */}
-      <div className="ft-main">
-
+      <div className={styles.ftMain}>
         {/* Brand column */}
-        <div className="ft-brand">
-          <Link to="/" className="ft-logo">FUEL<span>FIT</span></Link>
-          <p className="ft-desc">
+        <div className={styles.ftBrand}>
+          <Link to="/" className={styles.ftLogo}>
+            FUEL<span>FIT</span>
+          </Link>
+          <p className={styles.ftDesc}>
             Premium proteins &amp; supplements for athletes who refuse to
             compromise. 100% authentic products, fast delivery across India.
           </p>
-          <div className="ft-socials">
+          <div className={styles.ftSocials}>
             {SOCIALS.map((s) => (
               <button
                 key={s.label}
-                className="ft-social-btn"
+                className={styles.ftSocialBtn}
                 title={s.label}
                 onClick={() => toast(`${s.label} coming soon!`)}
               >
@@ -111,19 +115,19 @@ const Footer = () => {
           </div>
 
           {/* Trust badges */}
-          <div className="ft-trust">
-            <div className="ft-trust-badge">✅ 100% Authentic</div>
-            <div className="ft-trust-badge">🚚 Free Delivery</div>
-            <div className="ft-trust-badge">🔄 Easy Returns</div>
+          <div className={styles.ftTrust}>
+            <div className={styles.ftTrustBadge}>✅ 100% Authentic</div>
+            <div className={styles.ftTrustBadge}>🚚 Free Delivery</div>
+            <div className={styles.ftTrustBadge}>🔄 Easy Returns</div>
           </div>
         </div>
 
         {/* Link columns */}
         {Object.entries(LINKS).map(([title, links]) => (
-          <div className="ft-col" key={title}>
-            <h4 className="ft-col-title">{title}</h4>
+          <div className={styles.ftCol} key={title}>
+            <h4 className={styles.ftColTitle}>{title}</h4>
             {links.map((l) => (
-              <Link to={l.to} className="ft-link" key={l.label}>
+              <Link to={l.to} className={styles.ftLink} key={l.label}>
                 {l.label}
               </Link>
             ))}
@@ -132,20 +136,21 @@ const Footer = () => {
       </div>
 
       {/* ── Bottom bar ── */}
-      <div className="ft-bottom">
-        <p className="ft-copy">
-          © 2025 <span>FuelFit</span>. All rights reserved.
-          Made with 💪 in India.
+      <div className={styles.ftBottom}>
+        <p className={styles.ftCopy}>
+          © 2025 <span>FuelFit</span>. All rights reserved. Made with 💪 in
+          India.
         </p>
 
-        <div className="ft-payment">
-          <span className="ft-pay-label">We accept:</span>
+        <div className={styles.ftPayment}>
+          <span className={styles.ftPayLabel}>We accept:</span>
           {["Razorpay", "UPI", "Visa", "Mastercard", "COD"].map((p) => (
-            <div className="ft-pay-badge" key={p}>{p}</div>
+            <div className={styles.ftPayBadge} key={p}>
+              {p}
+            </div>
           ))}
         </div>
       </div>
-
     </footer>
   );
 };

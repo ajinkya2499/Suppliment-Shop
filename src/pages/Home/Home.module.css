@@ -31,7 +31,7 @@
   margin-bottom: 1rem;
 }
 .heroTitle span { color: #f5a623; }
-.herosub { color: #999; font-size: 15px; line-height: 1.6; margin-bottom: 1.5rem; }
+.heroSub { color: #999; font-size: 15px; line-height: 1.6; margin-bottom: 1.5rem; }
 .heroBtns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 2rem; }
 .btnPrimary {
   background: #f5a623;
@@ -59,7 +59,7 @@
   transition: border-color 0.15s;
 }
 .btnOutline:hover { border-color: #f5a623; color: #f5a623; }
-.herostats { display: flex; gap: 2.5rem; }
+.heroStats { display: flex; gap: 2.5rem; }
 .statNum {
   font-family: 'Bebas Neue', cursive;
   font-size: 30px;

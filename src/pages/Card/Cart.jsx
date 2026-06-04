@@ -7,7 +7,7 @@ import {
 } from "react-icons/fi";
 import { removeFromCart, updateQuantity, clearCart } from "../../redux/slices/cartSlice";
 import toast from "react-hot-toast";
-import "./Cart.css";
+import styles from "./Cart.module.css";   // ← CSS Module import
 
 /* ── valid coupons ── */
 const COUPONS = {
@@ -81,11 +81,11 @@ const Cart = () => {
   /* ── empty state ── */
   if (items.length === 0) {
     return (
-      <div className="cart-empty">
-        <div className="empty-icon">🛒</div>
+      <div className={styles.cartEmpty}>
+        <div className={styles.emptyIcon}>🛒</div>
         <h2>Your cart is empty</h2>
         <p>Looks like you haven't added anything yet.</p>
-        <Link to="/products" className="empty-shop-btn">
+        <Link to="/products" className={styles.emptyShopBtn}>
           <FiShoppingBag size={16}/> Start Shopping
         </Link>
       </div>
@@ -93,76 +93,76 @@ const Cart = () => {
   }
 
   return (
-    <div className="cart-page">
+    <div className={styles.cartPage}>
 
       {/* Breadcrumb */}
-      <div className="cart-breadcrumb">
+      <div className={styles.cartBreadcrumb}>
         <Link to="/">Home</Link> ›
         <Link to="/products">Products</Link> ›
         <span>Cart ({totalItems} items)</span>
       </div>
 
       {/* Steps */}
-      <div className="steps-bar">
+      <div className={styles.stepsBar}>
         {STEPS.map((step, i) => (
-          <div className="step-group" key={step}>
-            <div className={`step-dot ${i === 0 ? "active" : "gray"}`}>
+          <div className={styles.stepGroup} key={step}>
+            <div className={`${styles.stepDot} ${i === 0 ? styles.active : styles.gray}`}>
               {i === 0 ? "✓" : i + 1}
             </div>
-            <div className={`step-lbl ${i === 0 ? "active" : ""}`}>{step}</div>
-            {i < STEPS.length - 1 && <div className="step-line"/>}
+            <div className={`${styles.stepLbl} ${i === 0 ? styles.active : ""}`}>{step}</div>
+            {i < STEPS.length - 1 && <div className={styles.stepLine}/>}
           </div>
         ))}
       </div>
 
-      <div className="cart-body">
+      <div className={styles.cartBody}>
 
         {/* ── LEFT: Cart items ── */}
-        <div className="cart-left">
-          <div className="cart-header-row">
-            <h1 className="cart-title">MY CART ({totalItems} items)</h1>
-            <button className="clear-cart-btn" onClick={handleClearCart}>
+        <div className={styles.cartLeft}>
+          <div className={styles.cartHeaderRow}>
+            <h1 className={styles.cartTitle}>MY CART ({totalItems} items)</h1>
+            <button className={styles.clearCartBtn} onClick={handleClearCart}>
               <FiTrash2 size={13}/> Clear Cart
             </button>
           </div>
 
           {items.map((item) => (
-            <div className="cart-item" key={item.id}>
-              <Link to={`/products/${item.id}`} className="ci-img-link">
-                <img src={item.image} alt={item.title} className="ci-img"/>
+            <div className={styles.cartItem} key={item.id}>
+              <Link to={`/products/${item.id}`} className={styles.ciImgLink}>
+                <img src={item.image} alt={item.title} className={styles.ciImg}/>
               </Link>
 
-              <div className="ci-info">
-                <div className="ci-brand">{item.brand}</div>
-                <Link to={`/products/${item.id}`} className="ci-name">
+              <div className={styles.ciInfo}>
+                <div className={styles.ciBrand}>{item.brand}</div>
+                <Link to={`/products/${item.id}`} className={styles.ciName}>
                   {item.title}
                 </Link>
-                <div className="ci-meta">
+                <div className={styles.ciMeta}>
                   {item.weight && <span>Weight: {item.weight}</span>}
                 </div>
                 {item.stock <= 5 && (
-                  <div className="ci-low-stock">
+                  <div className={styles.ciLowStock}>
                     ⚠️ Only {item.stock} left!
                   </div>
                 )}
-                <div className="ci-actions">
-                  <div className="qty-ctrl">
+                <div className={styles.ciActions}>
+                  <div className={styles.qtyCtrl}>
                     <button
-                      className="qty-btn"
+                      className={styles.qtyBtn}
                       onClick={() => handleQty(item.id, item.quantity - 1)}
                     >
                       <FiMinus size={12}/>
                     </button>
-                    <span className="qty-val">{item.quantity}</span>
+                    <span className={styles.qtyVal}>{item.quantity}</span>
                     <button
-                      className="qty-btn"
+                      className={styles.qtyBtn}
                       onClick={() => handleQty(item.id, Math.min(item.stock, item.quantity + 1))}
                     >
                       <FiPlus size={12}/>
                     </button>
                   </div>
                   <button
-                    className="ci-remove-btn"
+                    className={styles.ciRemoveBtn}
                     onClick={() => handleRemove(item.id, item.title)}
                   >
                     <FiTrash2 size={13}/> Remove
@@ -170,15 +170,15 @@ const Cart = () => {
                 </div>
               </div>
 
-              <div className="ci-price-col">
-                <div className="ci-total-price">
+              <div className={styles.ciPriceCol}>
+                <div className={styles.ciTotalPrice}>
                   ₹{(item.price * item.quantity).toLocaleString()}
                 </div>
-                <div className="ci-unit-price">
+                <div className={styles.ciUnitPrice}>
                   ₹{item.price.toLocaleString()} × {item.quantity}
                 </div>
                 {item.originalPrice > item.price && (
-                  <div className="ci-saved">
+                  <div className={styles.ciSaved}>
                     Save ₹{((item.originalPrice - item.price) * item.quantity).toLocaleString()}
                   </div>
                 )}
@@ -188,40 +188,40 @@ const Cart = () => {
         </div>
 
         {/* ── RIGHT: Summary ── */}
-        <div className="cart-right">
+        <div className={styles.cartRight}>
 
           {/* Coupon */}
-          <div className="coupon-box">
-            <div className="coupon-label">
+          <div className={styles.couponBox}>
+            <div className={styles.couponLabel}>
               <FiTag size={14}/> Apply Coupon
             </div>
 
             {appliedCoupon ? (
-              <div className="coupon-applied">
-                <span className="coupon-code-tag">{appliedCoupon}</span>
-                <span className="coupon-success">
+              <div className={styles.couponApplied}>
+                <span className={styles.couponCodeTag}>{appliedCoupon}</span>
+                <span className={styles.couponSuccess}>
                   {COUPONS[appliedCoupon] * 100}% off applied!
                 </span>
-                <button className="coupon-remove" onClick={handleRemoveCoupon}>✕</button>
+                <button className={styles.couponRemove} onClick={handleRemoveCoupon}>✕</button>
               </div>
             ) : (
               <>
-                <div className="coupon-row">
+                <div className={styles.couponRow}>
                   <input
-                    className="coupon-input"
+                    className={styles.couponInput}
                     placeholder="Enter coupon code"
                     value={couponCode}
                     onChange={(e) => { setCouponCode(e.target.value); setCouponError(""); }}
                     onKeyDown={(e) => e.key === "Enter" && handleApplyCoupon()}
                   />
-                  <button className="coupon-btn" onClick={handleApplyCoupon}>
+                  <button className={styles.couponBtn} onClick={handleApplyCoupon}>
                     Apply
                   </button>
                 </div>
                 {couponError && (
-                  <div className="coupon-error">{couponError}</div>
+                  <div className={styles.couponError}>{couponError}</div>
                 )}
-                <div className="coupon-hints">
+                <div className={styles.couponHints}>
                   Try: <span onClick={() => setCouponCode("MUSCLE20")}>MUSCLE20</span>,{" "}
                   <span onClick={() => setCouponCode("FUEL10")}>FUEL10</span>,{" "}
                   <span onClick={() => setCouponCode("FIRST15")}>FIRST15</span>
@@ -231,61 +231,61 @@ const Cart = () => {
           </div>
 
           {/* Order summary */}
-          <div className="order-summary">
-            <div className="os-title">ORDER SUMMARY</div>
+          <div className={styles.orderSummary}>
+            <div className={styles.osTitle}>ORDER SUMMARY</div>
 
-            <div className="os-row">
+            <div className={styles.osRow}>
               <span>Subtotal ({totalItems} items)</span>
               <span>₹{subtotal.toLocaleString()}</span>
             </div>
-            <div className="os-row green">
+            <div className={`${styles.osRow} ${styles.green}`}>
               <span>Product Discount</span>
               <span>− ₹{itemDiscount.toLocaleString()}</span>
             </div>
             {couponDiscount > 0 && (
-              <div className="os-row green">
+              <div className={`${styles.osRow} ${styles.green}`}>
                 <span>Coupon ({appliedCoupon})</span>
                 <span>− ₹{couponDiscount.toLocaleString()}</span>
               </div>
             )}
-            <div className="os-row">
+            <div className={styles.osRow}>
               <span>Delivery</span>
-              <span className={delivery === 0 ? "green" : ""}>
+              <span className={delivery === 0 ? styles.green : ""}>
                 {delivery === 0 ? "FREE" : `₹${delivery}`}
               </span>
             </div>
 
-            <div className="os-divider"/>
+            <div className={styles.osDivider}/>
 
-            <div className="os-row total-row">
+            <div className={`${styles.osRow} ${styles.totalRow}`}>
               <span>Total</span>
               <span>₹{total.toLocaleString()}</span>
             </div>
 
             {totalSavings > 0 && (
-              <div className="os-savings">
+              <div className={styles.osSavings}>
                 🎉 You're saving ₹{totalSavings.toLocaleString()} on this order!
               </div>
             )}
           </div>
 
           {/* Checkout button */}
-          <button className="checkout-btn" onClick={handleCheckout}>
+          <button className={styles.checkoutBtn} onClick={handleCheckout}>
             Proceed to Checkout →
           </button>
 
-          <div className="secure-note">
+          <div className={styles.secureNote}>
             <FiLock size={12}/> Secure checkout via Razorpay
           </div>
 
           {/* Trust icons */}
-          <div className="trust-chips">
+          <div className={styles.trustChips}>
             {[
               { icon: <FiShield    size={16}/>, text: "Authentic" },
               { icon: <FiRefreshCw size={16}/>, text: "Returns"   },
               { icon: <FiTruck     size={16}/>, text: "Free Ship" },
             ].map((t) => (
-              <div className="trust-chip" key={t.text}>
+              <div className={styles.trustChip} key={t.text}>
                 {t.icon}
                 <span>{t.text}</span>
               </div>
@@ -293,7 +293,7 @@ const Cart = () => {
           </div>
 
           {/* Continue shopping */}
-          <Link to="/products" className="continue-link">
+          <Link to="/products" className={styles.continueLink}>
             ← Continue Shopping
           </Link>
         </div>
